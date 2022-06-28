@@ -8,6 +8,7 @@ const typeDefs = gql`
     }
     
     type Food {
+        _id: ID
         foodName: String
         expiration: String
         quantity: Int
@@ -22,6 +23,8 @@ const typeDefs = gql`
         me: User
         users: [User]
         user(username: String!): User
+        foods(foodName: String): [Food]
+        food(_id: ID!): Food
     }
 
     type Mutation {
