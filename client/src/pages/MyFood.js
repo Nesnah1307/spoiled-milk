@@ -79,10 +79,9 @@ const SavedFoods = () => {
             : 'You have no saved food!'}
         </h2>
         <CardColumns>
-          {userData.myFood.map((book) => {
+          {userData.myFood.map((food) => {
             return (
               <Card key={food.foodName} border='dark'>
-                {book.image ? <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' /> : null}
                 <Card.Body>
                   <Card.Title>{food.name}</Card.Title>
                   <Button className='btn-block btn-danger' onClick={() => handleDeleteFood(food.foodName)}>

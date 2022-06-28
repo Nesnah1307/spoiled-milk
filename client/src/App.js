@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import SavedFoods from './pages/MyFood';
+//import SearchBooks from './pages/SearchBooks';
 
 function App() {
   return (
@@ -8,8 +10,8 @@ function App() {
       <>
         <Navbar />
         <Switch>
-          {/* <Route exact path='/' component={SearchBooks} />
-          <Route exact path='/saved' component={SavedBooks} /> */}
+          {/* <Route exact path='/' component={SearchBooks} /> */}
+          <Route exact path='/saved' component={SavedFoods} />
           <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
         </Switch>
       </>
