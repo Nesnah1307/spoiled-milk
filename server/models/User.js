@@ -22,7 +22,12 @@ const userSchema = new Schema(
       required: true,
     },
     // set myFoods to be an array of data that adheres to the foodSchema
-    // myFoods: [foodSchema],
+    myFoods: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Food'
+      }
+    ],
   },
   // set this to use virtual below
   {
