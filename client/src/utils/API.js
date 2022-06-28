@@ -28,25 +28,25 @@ export const loginUser = (userData) => {
   });
 };
 
-// save book data for a logged in user
-// export const saveBook = (bookData, token) => {
-//   return fetch('/api/users', {
-//     method: 'PUT',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       authorization: `Bearer ${token}`,
-//     },
-//     body: JSON.stringify(bookData),
-//   });
-// };
+// save food data for a logged in user
+export const saveFood = (foodData, token) => {
+  return fetch('/api/users', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(foodData),
+  });
+};
 
-// remove saved book data for a logged in user
-// export const deleteBook = (bookId, token) => {
-//   return fetch(`/api/users/books/${bookId}`, {
-//     method: 'DELETE',
-//     headers: {
-//       authorization: `Bearer ${token}`,
-//     },
-//   });
-// };
+// remove saved food data for a logged in user
+export const deleteFood = (foodName, token) => {
+  return fetch(`/api/users/food/${foodName}`, {
+    method: 'DELETE',
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  });
+};
 

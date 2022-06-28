@@ -65,7 +65,7 @@ module.exports = {
   //      By ID
   //     { $pull: { Myfoods: { foodId: params.foodId } } },
   //      By Name
-        { $pull: { Myfoods: { foodName: params.foodName } } },
+        { $pull: { myfoods: { foodName: params.foodName } } },
       { new: true }
     );
     if (!updatedUser) {

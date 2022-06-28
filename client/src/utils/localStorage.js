@@ -1,30 +1,30 @@
-// export const getSavedBookIds = () => {
-//   const savedBookIds = localStorage.getItem('saved_books')
-//     ? JSON.parse(localStorage.getItem('saved_books'))
-//     : [];
+export const getSavedFoodNames = () => {
+  const savedFoodNames = localStorage.getItem('saved_foods')
+    ? JSON.parse(localStorage.getItem('saved_foods'))
+    : [];
 
-//   return savedBookIds;
-// };
+  return savedFoodNames;
+};
 
-// export const saveBookIds = (bookIdArr) => {
-//   if (bookIdArr.length) {
-//     localStorage.setItem('saved_books', JSON.stringify(bookIdArr));
-//   } else {
-//     localStorage.removeItem('saved_books');
-//   }
-// };
+export const saveFoodNames = (foodNameArr) => {
+  if (foodNameArr.length) {
+    localStorage.setItem('saved_foods', JSON.stringify(foodNameArr));
+  } else {
+    localStorage.removeItem('saved_foods');
+  }
+};
 
-// export const removeBookId = (bookId) => {
-//   const savedBookIds = localStorage.getItem('saved_books')
-//     ? JSON.parse(localStorage.getItem('saved_books'))
-//     : null;
+export const removeFood = (foodName) => {
+  const savedFoodNames = localStorage.getItem('saved_foods')
+    ? JSON.parse(localStorage.getItem('saved_foods'))
+    : null;
 
-//   if (!savedBookIds) {
-//     return false;
-//   }
+  if (!savedFoodNames) {
+    return false;
+  }
 
-//   const updatedSavedBookIds = savedBookIds?.filter((savedBookId) => savedBookId !== bookId);
-//   localStorage.setItem('saved_books', JSON.stringify(updatedSavedBookIds));
+  const updatedSavedFoodNames = savedFoodNames?.filter((savedFoodName) => savedFoodName !== foodName);
+  localStorage.setItem('saved_foods', JSON.stringify(updatedSavedFoodNames));
 
-//   return true;
-// };
+  return true;
+};
