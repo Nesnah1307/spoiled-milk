@@ -5,6 +5,12 @@ import { getMe, deleteFood } from '../utils/API';
 import Auth from '../utils/auth';
 import { removeFood } from '../utils/localStorage';
 
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
+import AddFood from '../components/addFood';
+
+
 const SavedFoods = () => {
   const [userData, setUserData] = useState({});
 
@@ -36,6 +42,8 @@ const SavedFoods = () => {
     getUserData();
   }, [userDataLength]);
 
+  
+
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteFood = async (foodName) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -60,6 +68,7 @@ const SavedFoods = () => {
     }
   };
 
+
   // if data isn't here yet, say so
   if (!userDataLength) {
     return <h2>LOADING...</h2>;
@@ -67,6 +76,7 @@ const SavedFoods = () => {
 
   return (
     <>
+      <AddFood />
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
           <h1>Viewing your food!</h1>
