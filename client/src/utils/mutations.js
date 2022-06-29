@@ -35,35 +35,6 @@ export const ADD_FOOD = gql`
   }
 `;
 
-// export const ADD_REACTION = gql`
-//   mutation addReaction($thoughtId: ID!, $reactionBody: String!) {
-//     addReaction(thoughtId: $thoughtId, reactionBody: $reactionBody) {
-//       _id
-//       reactionCount
-//       reactions {
-//         _id
-//         reactionBody
-//         createdAt
-//         username
-//       }
-//     }
-//   }
-// `;
-
-// export const ADD_FRIEND = gql`
-//   mutation addFriend($id: ID!) {
-//     addFriend(friendId: $id) {
-//       _id
-//       username
-//       friendCount
-//       friends {
-//         _id
-//         username
-//       }
-//     }
-//   }
-// `;
-
 export const REMOVE_FOOD = gql`
   mutation removeFood($id: ID!) {
     removeFood(id: $id) {
@@ -73,5 +44,4 @@ export const REMOVE_FOOD = gql`
       quantity
       }
     }
-  }
 `;
