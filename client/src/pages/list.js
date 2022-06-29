@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft, faCircle, faCheckCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
+import moment from  "moment";
 
 
 
@@ -40,6 +41,19 @@ const App = () => {
                         </button>
                     </div>
                     <div className='total'>Total: {totalItemCount}</div>
+                    <div className='experation date'>
+                        {item.isSelected ? (
+                            <>
+                                <FontAwesomeIcon icon={faCheckCircle} />
+                                <span className='completed'>{experation.date}</span>
+                            </>
+                        ) : (
+                            <>
+                                <FontAwesomeIcon icon={faCircle} />
+                                <span>{experation.date}</span>
+                            </>
+                        )}
+                    </div>
                 </div>
             ))}
         </div>
@@ -52,7 +66,7 @@ const handleAddButtonClick = () => {
         itemName: inputValue,
         quantity: 1,
         isSelected: false,
-        calculateTotal()
+        calculateTotal();
     };
 
     const newItems = [...items, newItem];
@@ -60,6 +74,7 @@ const handleAddButtonClick = () => {
     setItems(newItems);
     setInputValue('');
 };
+
 
 const handleQuantityIncrease = (index) => {
     const newItems = [...items];
