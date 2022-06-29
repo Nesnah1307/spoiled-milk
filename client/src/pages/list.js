@@ -45,12 +45,12 @@ const App = () => {
                         {item.isSelected ? (
                             <>
                                 <FontAwesomeIcon icon={faCheckCircle} />
-                                <span className='completed'>{experation.date}</span>
+                                <span className='completed'>{expiration.date}</span>
                             </>
                         ) : (
                             <>
                                 <FontAwesomeIcon icon={faCircle} />
-                                <span>{experation.date}</span>
+                                <span>{expiration.date}</span>
                             </>
                         )}
                     </div>
@@ -66,8 +66,9 @@ const handleAddButtonClick = () => {
         itemName: inputValue,
         quantity: 1,
         isSelected: false,
-        calculateTotal();
     };
+
+    calculateTotal()
 
     const newItems = [...items, newItem];
 
