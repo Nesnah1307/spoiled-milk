@@ -11,7 +11,7 @@ function App() {
     <Router>
       <>
         <Navbar />
-        <AddFood/>
+        {/* <AddFood/> */}
         <Switch>
           {/* <Route exact path='/' component={SearchBooks} /> */}
           <Route exact path='/saved' component={SavedFoods} />

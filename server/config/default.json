@@ -1,0 +1,4 @@
+{
+    "mongoURI":
+        "mongodb+srv://spoiledmilk:UofUbootcamp@cluster0.mmquk.mongodb.net/?retryWrites=true&w=majority"
+}
