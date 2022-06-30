@@ -2,19 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft, faCircle, faCheckCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
 import ReactDatePicker from 'react-datepicker';
+import { ADD_FOOD } from '../utils/mutations';
 
 
 
 const AddFood = () => {
 
-    const [foodName, setFoodName] = useState('')
-    const [quantity, setQuantity] = useState(1)
-    const [exDate, setExDate] = useState(new Date());
+        const [foodName, setFoodName] = useState('')
+        const [quantity, setQuantity] = useState(1)
+        const [exDate, setExDate] = useState(new Date());
 
 
     const handleAddButtonClick = () => {
         console.log({foodName, quantity,exDate});
-        
     };
 
 
@@ -33,7 +33,7 @@ const AddFood = () => {
     return (
         <>
         <div className ="foodName">
-            <p>type in your food and select experation date</p>
+            <p>type in your food and select expiration date</p>
             <input type="text" value = {foodName} onChange={handleNameChange}  />
             
         </div>
