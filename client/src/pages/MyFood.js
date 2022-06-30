@@ -13,11 +13,12 @@ import "react-datepicker/dist/react-datepicker.css";
 import AddFood from '../components/addFood';
 
 
-const SavedFoods = () => {
-  // const [userData, setUserData] = useState({});
-  const { loading, data } = useQuery(QUERY_FOODS);
-  const { data: userData } = useQuery(QUERY_ME_BASIC);
-  const foods = data?.foods || [];
+const MyFoods = () => {
+  const [userData, setUserData] = useState({});
+  const [foodName, setFoodName] = useState('')
+    const [quantity, setQuantity] = useState(1)
+    const [exDate, setExDate] = useState(new Date());
+
 
   const loggedIn = Auth.loggedIn();
   // use this to determine if `useEffect()` hook needs to run again
@@ -45,13 +46,23 @@ const SavedFoods = () => {
   //     }
   //   };
 
-  //   getUserData();
-  // }, [userDataLength]);
+    getUserData();
+  // }, [userDataLength];
+  const handleQuantityIncrease = (index) => {
+    setQuantity(quantity + 1);
+};
 
+const handleQuantityDecrease = (index) => {
+    setQuantity(quantity - 1);
+};
+
+const handleNameChange = (event) => {
+    setFoodName(event.target.value);
+};
   
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
-  const handleDeleteFood = async (foodName) => {
+const handleDeleteFood = async (foodName) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
   //   if (!token) {
@@ -65,24 +76,28 @@ const SavedFoods = () => {
   //       throw new Error('something went wrong!');
   //     }
 
-  //     const updatedUser = await response.json();
-  //     setUserData(updatedUser);
-  //     // upon success, remove book's id from localStorage
-  //     removeFood(foodName);
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
+      const updatedUser = await response.json();
+      setUserData(updatedUser);
+      // upon success, remove book's id from localStorage
+      removeFood(foodName);
+}
+//  } catch (err) {
+//       console.error(err);
+//     };
+  const handleAddButtonClick = () => {
+    console.log({foodName, quantity,exDate});
+    localStorage.setItem('food', JSON.stringify({foodName, quantity,exDate}))
+};
 
 
   // if data isn't here yet, say so
-  // if (!userDataLength) {
-  //   return <h2>LOADING...</h2>;
-  // }
+  //if (!userDataLength) {
+  // return <h2>LOADING...</h2>;
+  //}
 
   return (
     <>
-      <AddFood />
+      <AddFood foodName ={foodName} quantity={quantity} exDate={exDate} handleAddButtonClick ={handleAddButtonClick}/> 
       <Jumbotron fluid className='text-light bg-dark'>
         <Container>
           <h1>Viewing your food!</h1>
@@ -90,12 +105,12 @@ const SavedFoods = () => {
       </Jumbotron>
       <Container>
         <h2>
-          {userData.myFood.length
+          {userData.MyFood && userData.myFood.length
             ? `Viewing ${userData.myFood.length} saved ${userData.myFood.length === 1 ? 'food' : 'foods'}:`
             : 'You have no saved food!'}
         </h2>
         <CardColumns>
-          {userData.myFood.map((food) => {
+          {userData.MyFood && userData.myFood.map((food) => {
             return (
               <Card key={food.foodName} border='dark'>
                 <Card.Body>
@@ -169,6 +184,6 @@ const SavedFoods = () => {
 //   </main>
 // );
 };
-};
 
-export default SavedFoods;
+
+export default MyFoods;

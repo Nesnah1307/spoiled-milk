@@ -33,6 +33,7 @@ const AddFood = () => {
     return (
         <>
         <div className ="foodName">
+            <p>type in your food and select experation date</p>
             <input type="text" value = {foodName} onChange={handleNameChange}  />
             
         </div>
