@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft, faCircle, faCheckCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
 import ReactDatePicker from 'react-datepicker';
 import { ADD_FOOD } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
 
 
 
@@ -10,11 +11,13 @@ const AddFood = () => {
 
         const [foodName, setFoodName] = useState('')
         const [quantity, setQuantity] = useState(1)
-        const [exDate, setExDate] = useState(new Date());
+        const [expiration, setExDate] = useState(new Date());
+        const [addFood, {data, loading, error}] = useMutation(ADD_FOOD);
 
 
     const handleAddButtonClick = () => {
-        console.log({foodName, quantity,exDate});
+        addFood({foodName, quantity,expiration});
+
     };
 
 
@@ -46,7 +49,7 @@ const AddFood = () => {
                 <FontAwesomeIcon icon={faChevronRight} onClick={handleQuantityIncrease} />
             </button>
         </div>
-        <ReactDatePicker selected={exDate} onChange={(date) => setExDate(date)} />
+        <ReactDatePicker selected={expiration} onChange={(date) => setExDate(date)} />
         <button onClick={handleAddButtonClick}>
             Add Food
         </button>

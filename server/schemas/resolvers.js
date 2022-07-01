@@ -59,7 +59,7 @@ const resolvers = {
         },
         addFood: async (parent, args, context) => {
           if (context.user) {
-            const food = await Food.create({ ...args, foodName: context.user.foodName });
+            const food = await Food.create({ ...args});
     
             await User.findByIdAndUpdate(
               { _id: context.user._id },

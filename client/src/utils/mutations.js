@@ -25,8 +25,9 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_FOOD = gql`
-  mutation addFood($foodName: String!) {
-    addFood(foodName: $foodName) {
+  mutation addFood($foodName: String!, $expiration: String!, $quantity: Int!) {
+
+    addFood(foodName: $foodName, expiration: $expiration, quantity:$quantity) {
       _id
       foodName
       expiration
