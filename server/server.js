@@ -43,9 +43,9 @@ app.get('*', (req, res) => {
 //   await server.start();
 //   server.applyMiddleware({ app });
 
-server.listen().then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`);
-});
+// server.listen().then(({ url }) => {
+//   console.log(`🚀  Server ready at ${url}`);
+// });
 
 
 

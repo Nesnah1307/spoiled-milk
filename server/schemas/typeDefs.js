@@ -26,7 +26,6 @@ const typeDefs = gql`
         user(username: String!): User
         foods(foodName: String): [Food]
         food(_id: ID!): Food
-        myFood(User: myFood)[Food]
     }
 
     type Mutation {
