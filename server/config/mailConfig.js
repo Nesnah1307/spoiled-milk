@@ -1,40 +1,30 @@
-var mailConfig;
-if (process.env.NODE_ENV === 'production' ){
+let mailConfig = {
     // all emails are delivered to destination
-    mailConfig = {
-        host: 'smtp.sendgrid.net',
-        port: 587,
-        auth: {
-            user: 'real.user',
-            pass: 'verysecret'
-        }
-    };
-} else {
-    // all emails are catched by ethereal.email
-    mailConfig = {
-        host: 'smtp.ethereal.email',
-        port: 587,
-        auth: {
-            user: 'ethereal.user@ethereal.email',
-            pass: 'verysecret'
-        }
-    };
-}
+    host: 'smtp.gmail.com',
+    port: 587,
+    auth: {
+        user: 'process.env.EMAIL_USERNAME',
+        pass: 'process.env.EMAIL_PASSWORD'
+    },
+};
 let transporter = nodemailer.createTransport(mailConfig);
 
 const inventoryLow = {
-    from: "sender@server.com",
+    from: "sender@gmail.com", 
     subject: "INVENTORY LOW",
-    text: "Plaintext version of the message"
+    text: "Your inventory needs to be restocked."
 }
 
 module.exports = { transporter, inventoryLow }
 
-const { transporter, inventoryLow } = require ('../../config')
 
-(( req, res) => {
-    inventoryLow.to = req.params.useremail
-    transporter.sendMail(inventoryLow).then(info => {
-        res.json({ info })
-    })
-})
+
+// code below will be added to the inventory route
+// const { transporter, inventoryLow } = require('../../config/mailConfig.js')
+
+//         ((req, res) => {
+//             inventoryLow.to = req.params.useremail
+//             transporter.sendMail(inventoryLow).then(info => {
+//                 res.json({ info })
+//             })
+//         })
