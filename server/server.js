@@ -25,10 +25,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/spoiled-milk', {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
+//mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/spoiled-milk', {
+  //useNewUrlParser: true,
+ // useFindAndModify: false
+//});
 
 // if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === 'production') {
