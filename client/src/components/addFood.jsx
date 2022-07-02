@@ -16,7 +16,7 @@ const AddFood = () => {
 
 
     const handleAddButtonClick = () => {
-        addFood({foodName, quantity,expiration});
+        addFood({variables:{foodName, quantity,expiration}});
 
     };
 
