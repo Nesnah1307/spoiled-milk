@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AddFood from './components/addFood';
 import Navbar from './components/Navbar';
 import MyFoods from './pages/MyFood';
@@ -11,11 +11,11 @@ function App() {
     <Router>
       <>
         <Navbar />
-        <Switch>
+        <Routes>
           {/* <Route exact path='/' component={SearchBooks} /> */}
           <Route exact path='/' component={MyFoods} />
           <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
-        </Switch>
+        </Routes>
       </>
     </Router>
   );
