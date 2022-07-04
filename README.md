@@ -1,70 +1,46 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# spoiled milk
 
-## Available Scripts
+![spoiled milk1](https://user-images.githubusercontent.com/94236932/177079101-9e41c750-0982-4558-a785-dfacf5cf6506.png)
+![spoiled milk2](https://user-images.githubusercontent.com/94236932/177079134-038590d6-a89f-48a3-a983-40759d29d2dd.png)
 
-In the project directory, you can run:
 
-### `npm start`
+## Table of Contents:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Description](#description)
+- [Repo-link](#repo-link)
+- [Features](#features)
+- [Contributors](#contributors)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Description:
 
-### `npm test`
+Spoiled-milk is an app designed to keep track of what’s in your fridge so you don’t have to!
+you can enter your groceries, add quantity and expiration date so the app can keep track of what you have and how long they are good for.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features:
 
-### `npm run build`
+- list of your groceries
+- weekly email to notify you of what is about to expire
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Links:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Github repo: [Github-Link](https://github.com/Nesnah1307/spoiled-milk)
+Deployed link: [Deployed-Link]https://dry-inlet-29870.herokuapp.com/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tehcnologies Used
 
-### `npm run eject`
+- Express.js
+- Node.js
+- HTML
+- CSS
+- JavaScript
+- PWA
+- React.js
+- PWA
+- graphQL
+- Heroku
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributors:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Mack Hansen, Micah Moore, Julie Taukei and Roanan Platt
