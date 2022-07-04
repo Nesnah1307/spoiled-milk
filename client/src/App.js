@@ -7,8 +7,6 @@ import Navbar from './components/Navbar';
 import MyFoods from './pages/MyFood';
 //import SearchBooks from './pages/SearchBooks';
 
-<<<<<<< HEAD
-=======
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -29,7 +27,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
->>>>>>> f949443b3754bab5675a93f818a00e2bc93feb0b
 function App() {
   return (
     <ApolloProvider client={client}>
