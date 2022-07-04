@@ -15,7 +15,7 @@ const foodSchema = new Schema({
     type: Number,
     required: true,
   },
- });
+});
 
 const Food = model('Food', foodSchema); 
 
